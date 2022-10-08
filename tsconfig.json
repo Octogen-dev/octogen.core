@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es5", "es6", "dom"],
+    "rootDir": "."
+  },
+  "exclude": [
+      "node_modules",
+      "docs",
+      "dist",
+      "coverage",
+      ".github",
+      ".vscode",
+      ".devcontainer"
+  ]
+}

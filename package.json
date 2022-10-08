@@ -1,0 +1,78 @@
+{
+  "name": "octogen.core",
+  "author": "Yoann Diguet",
+  "license": "Apache",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "webpack",
+    "watch": "npx webpack -w",
+    "test": "jest --coverage",
+    "test_watch": "jest --watchAll",
+    "typedoc": "npx typedoc src/**/*.ts --name 'typescript template'",
+    "eslint": "eslint --fix 'src/**/*{.ts,.tsx}' && eslint --fix 'test/**/*{.ts,.tsx}'",
+    "local_publish": "npm run build && npm publish --registry=http://127.0.0.1:8081/repository/npm-hosted/ -f"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "babel-jest": "^27.4.6",
+    "eslint": "^8.6.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.4.7",
+    "ts-jest": "^27.1.2",
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ],
+    "coverageProvider": "v8",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageDirectory": "coverage",
+    "collectCoverage": true
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oYo-fr/typescript-template"
+  },
+  "keywords": [
+    "typescript",
+    "template",
+    "jest",
+    "github actions",
+    "node"
+  ],
+  "bugs": {
+    "url": "https://github.com/oYo-fr/typescript-template/issues"
+  },
+  "homepage": "https://oyo-fr.github.io/typescript-template/",
+  "dependencies": {
+    "ts-loader": "^9.4.1"
+  }
+}
